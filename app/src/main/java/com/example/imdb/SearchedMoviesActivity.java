@@ -20,65 +20,18 @@ public class SearchedMoviesActivity extends AppCompatActivity {
         setContentView(R.layout.searched_movies_items);
 
 
-
         RecyclerView recycler = findViewById(R.id.recycler);
-        final SavedDataBase db = new SavedDataBase(SearchedMoviesActivity.this ,"Imdb", null, 1);
-
-
-
-
-
-
-
-
-
-
+        final SavedDataBase db = new SavedDataBase(SearchedMoviesActivity.this, "Imdb", null, 1);
 
 
         List<Probs> searchedList = new ArrayList<>();
         searchedList = db.getMoviesDB();
-//        AdapterClass adapter = new AdapterClass();
-//        recycler.setAdapter(adapter);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        DetailAdapter dadapter = new DetailAdapter(searchedList);
+//        AdapterClass adapter = new AdapterClass(searchedList);
+        recycler.setAdapter(dadapter);
 
 
         recycler.setLayoutManager(new LinearLayoutManager(SearchedMoviesActivity.this
                 , RecyclerView.VERTICAL, false));
-
-        String s = "RecyclerView recycler = findViewById(R.id.searchedRecycler);\n" +
-                "        final ImdbDatabase db = new ImdbDatabase(SearchedMovieActivity.this, \"Imdb\", null, 1);\n" +
-                "        List<MovieProperties> searchedList = new ArrayList<>();\n" +
-                "        searchedList = db.getMoviesDB();\n" +
-                "        SearchedAdapter adapter = new SearchedAdapter(searchedList);\n" +
-                "        recycler.setAdapter(adapter);\n" +
-                "        recycler.setLayoutManager(new LinearLayoutManager(SearchedMovieActivity.this\n" +
-                "                , RecyclerView.VERTICAL, false));";
-
     }
 }

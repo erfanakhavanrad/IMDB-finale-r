@@ -6,7 +6,9 @@
     android:layout_height="match_parent"
     android:gravity="center"
     tools:context=".DetailsActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/DarkGold"
+    >
 
     <ScrollView
         android:layout_width="fill_parent"

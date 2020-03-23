@@ -22,8 +22,8 @@ public class SavedDataBase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String MOVIES_TABLE_QUERY = "CREATE TABLE " + TABLE_NAME + "(" +
-                "_id INTEGER  PRIMARY KEY AUTOINCREMENT," +
+        String MOVIES_TABLE_QUERY = " CREATE TABLE " + TABLE_NAME + "(" +
+                "_id INTEGER  PRIMARY KEY AUTOINCREMENT, " +
                 "title TEXT," +
                 "year TEXT," +
                 "rated TEXT," +
@@ -41,9 +41,9 @@ public class SavedDataBase extends SQLiteOpenHelper {
     }
 
     public void insertMovie(String title, String year, String rated, String runTime, String genre, String director, String cover) {
-        String INSERT_MOVIE_QUERY = "INSERT INTO" + TABLE_NAME + "(title, year, rated, releaseYear, runTime, genre, director, cover) VALUES("
+        String INSERT_MOVIE_QUERY = " INSERT INTO " + TABLE_NAME + "(title, year, rated, runTime, genre, director, cover) VALUES("
                 + "'" + title + "'" + ","
-                + "'" + year + "''" + ","
+                + "'" + year + "'" + ","
                 + "'" + rated + "'" + ","
                 + "'" + runTime + "'" + ","
                 + "'" + genre + "'" + ","
@@ -57,7 +57,7 @@ public class SavedDataBase extends SQLiteOpenHelper {
 
     public List<Probs> getMoviesDB() {
         List<Probs> mlist = new ArrayList<>();
-        String GET_ALL_MOVIE = "SELECT title,year,rated,releaseYear,runTime,genre,director FROM " + TABLE_NAME;
+        String GET_ALL_MOVIE = " SELECT title,year,rated,runTime,genre,director FROM " + TABLE_NAME;
         Probs mProperties;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(GET_ALL_MOVIE, null);
@@ -66,11 +66,11 @@ public class SavedDataBase extends SQLiteOpenHelper {
             mProperties.setTitle(c.getString(0));
             mProperties.setYear(c.getString(1));
             mProperties.setRated(c.getString(2));
-            mProperties.setReleased(c.getString(3));
-            mProperties.setRuntime(c.getString(4));
-            mProperties.setGenre(c.getString(5));
-            mProperties.setDirector(c.getString(6));
-            mProperties.setPoster(c.getString(7));
+//            mProperties.setReleased(c.getString(3));
+            mProperties.setRuntime(c.getString(3));
+            mProperties.setGenre(c.getString(4));
+            mProperties.setDirector(c.getString(5));
+            mProperties.setPoster(c.getString(6));
             mlist.add(mProperties);
         }
 
