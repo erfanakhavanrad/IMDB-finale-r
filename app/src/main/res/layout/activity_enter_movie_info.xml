@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DarkGold"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".EnterMovieInfoActivity">
+
+    <EditText
+        android:id="@+id/btnTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:hint="Online search for movies:"
+        android:textSize="30sp"
+        android:textColor="@color/Black"
+        />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Search"
+        android:textSize="25sp"
+        android:background="@drawable/selector_shapes"
+        />
+
+    <Button
+        android:id="@+id/btnDataBase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="open Database"
+        android:textSize="25sp"
+        android:background="@drawable/selector_shapes"
+        />
+
+
+</LinearLayout>
