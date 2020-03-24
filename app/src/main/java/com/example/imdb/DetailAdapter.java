@@ -19,26 +19,26 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.TestViewHo
     }
 
 
-   @NonNull
+    @NonNull
     @Override
     public TestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View v = inflater.inflate(R.layout.recycler_items, parent, false);
+        View v = inflater.inflate(R.layout.detaile_adapter_items, parent, false);
         TestViewHolder holder = new TestViewHolder(v);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull TestViewHolder holder, int position) {
-            holder.txtSearchedTitle.setText("Title: " + mylist.get(position).getTitle());
-            holder.txtSearchedYear.setText("Year: " +mylist.get(position).getYear());
-            holder.txtSearchedDirector.setText("Director: " +mylist.get(position).getDirector());
-            holder.txtSearchedActors.setText("Actors: " +mylist.get(position).getActors());
-            holder.txtSearchedGenre.setText("Genre: " +mylist.get(position).getGenre());
-            holder.txtSearchedCountry.setText("Country: " +mylist.get(position).getCountry());
-            holder.txtSearchedLanguage.setText("Language: " +mylist.get(position).getLanguage());
-            String coverUrl = mylist.get(position).getPoster();
-            Picasso.get().load(coverUrl).into(holder.searchedCover);
+        holder.txtSearchedTitle.setText("Title: " + mylist.get(position).getTitle());
+        holder.txtSearchedYear.setText("Year: " +mylist.get(position).getYear());
+        holder.txtSearchedDirector.setText("Director: " +mylist.get(position).getDirector());
+        holder.txtSearchedActors.setText("Actors: " +mylist.get(position).getActors());
+        holder.txtSearchedGenre.setText("Genre: " +mylist.get(position).getGenre());
+        holder.txtSearchedCountry.setText("Country: " +mylist.get(position).getCountry());
+        holder.txtSearchedLanguage.setText("Language: " +mylist.get(position).getLanguage());
+        String coverUrl = mylist.get(position).getPoster();
+        Picasso.get().load(coverUrl).into(holder.searchedCover);
 
 //        String imageUrl = mlist.get(position).getPoster();
 //        Picasso.get().load(imageUrl).into(holder.imgSearchedPoster);

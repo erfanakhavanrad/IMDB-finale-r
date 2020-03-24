@@ -17,11 +17,11 @@ public class SearchedMoviesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.searched_movies_items);
+        setContentView(R.layout.activity_recycler);
 
 
         RecyclerView recycler = findViewById(R.id.recycler);
-        final SavedDataBase db = new SavedDataBase(SearchedMoviesActivity.this, "Imdb", null, 1);
+        final SavedDataBase db = new SavedDataBase(SearchedMoviesActivity.this, "SaveMoviesDB", null, 1);
 
 
         List<Probs> searchedList = new ArrayList<>();

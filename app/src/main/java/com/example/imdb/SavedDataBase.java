@@ -57,7 +57,7 @@ public class SavedDataBase extends SQLiteOpenHelper {
 
     public List<Probs> getMoviesDB() {
         List<Probs> mlist = new ArrayList<>();
-        String GET_ALL_MOVIE = " SELECT title,year,rated,runTime,genre,director FROM " + TABLE_NAME;
+        String GET_ALL_MOVIE = " SELECT title,year,rated,runTime,genre,director,cover FROM " + TABLE_NAME;
         Probs mProperties;
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(GET_ALL_MOVIE, null);
